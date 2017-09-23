@@ -1,0 +1,116 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="main-page">
+<div class="background-image">
+		<!-- Preloader -->
+    <div id="preloader"></div>
+
+    <div class="animation">
+
+        <!-- Flying dog -->
+        <img class="flying-dog" src="../assets/img/flying-dog.gif" alt="Flying Dog">
+
+        <!-- Asteroid -->
+        <img class="asteroids" src="../assets/img/asteroids.png" alt="Asteriod">
+
+        <!-- Blackhole -->
+        <img class="blackhole" src="../assets/img/blackhole.png" alt="Black hole">
+
+        <!-- Superhero -->
+        <img class="superhero" src="../assets/img/superhero.png" alt="Stars">
+    
+        <!-- Planes -->
+        <img class="plane1" src="../assets/img/plane-1.png" alt="Space shuttle">
+        <img class="plane2" src="../assets/img/plane-2.png" alt="Space shuttle">
+        <img class="plane3" src="../assets/img/plane-3.png" alt="Space shuttle">
+
+        <!-- Planet -->
+        <img class="planet" src="../assets/img/planet.png" alt="Planet">
+
+        <!-- Astronaut -->
+        <img class="astronaut" src="../assets/img/astronaut.png" alt="Astronaut">
+     </div>
+</div>
+
+<div class="main-content">
+	<!-- Following Menu -->
+
+
+<!-- Page Contents -->
+<div class="pusher ui grid">
+  <div class="ui inverted vertical masthead center aligned segment ten wide column">
+
+    <div class="ui container">
+      <div class="ui large secondary inverted pointing menu">
+        <div class="main-logo">
+        	<img src="../assets/img/instagram_logo.png" alt="logo">
+        </div>
+        <a href="#" class="logout-button" *ngIf='isSignedIn' (click)="logOut()">Log out</a>
+        <a href="#" class="logout-button" *ngIf='!isSignedIn' (click)="logIn()">Log in</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ui vertical stripe segment ten wide column profile-info-container">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+				<div class="profile-image five wide column">
+					<div class="profile-image-content">
+						<img class="ui medium circular image" [src]="profile_pic">
+					</div>
+				</div>
+     		<div class="profile-info eleven wide column">
+     			<span class="profile-name">{{username}} <button class="ui primary basic tiny button" *ngIf="!isFollow && isSignedIn" (click)="followUnfollow('follow')">FOLLOW</button><button class="ui negative basic tiny button" *ngIf="isFollow && isSignedIn" (click)="followUnfollow('unfollow')">UNFOLLOW</button></span>
+					<p class="profile-desc"><b>{{fullname}}</b> {{user_bio}}</p>
+    			<span class="profile-nums" *ngIf='isSignedIn'>
+						<a class="profile-posts"><b>{{user_counts.media}}</b> posts</a>
+    				<a class="profile-followers"><b>{{user_counts.followed_by}}</b> followers</a>
+    				<a class="profile-following"><b>{{user_counts.follows}}</b> following</a>
+    			</span>
+     		</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="ui vertical stripe segment ten wide column grid images-container">
+      <div class="row" *ngFor="let item of images; index as i;">
+      	<div class="column image-content" *ngFor="let image of images[i]; index as iN;">
+      		<div class="image-icons">
+      			<a><i class="heart icon"></i> {{image.likes.count}}</a>
+      			<a><i class="comment icon"></i> {{image.comments.count}}</a>
+      		</div>
+      		<img [src]="image.images.standard_resolution.url" alt="image">
+      	</div>
+      </div>
+      <div class="row">
+      	<div class="column more-image-button" (click)="loadMore()" *ngIf="isLoadMore">
+      		<a>LOAD MORE</a>
+      	</div>
+      	<div class="ui active centered inline loader" *ngIf="isLoadingMore"></div>
+      </div>
+  </div>
+
+
+  <div class="ui inverted vertical footer segment ten wide column">
+    <div class="row">
+    	<div class="footer-links">
+    		<a href="https://www.instagram.com/about/us" target="_blank">ABOUT US</a>
+    		<a href="https://help.instagram.com/" target="_blank">SUPPORT</a>
+    		<a href="http://blog.instagram.com/" target="_blank">BLOG</a>
+    		<a href="https://instagram-press.com/" target="_blank">PRESS</a>
+    		<a href="https://www.instagram.com/developer" target="_blank">API</a>
+    		<a href="https://www.instagram.com/about/jobs" target="_blank">JOBS</a>
+    		<a href="https://www.instagram.com/legal/privacy" target="_blank">PRIVACY</a>
+    		<a href="https://www.instagram.com/legal/terms" target="_blank">TERMS</a>
+    		<a href="https://www.instagram.com/explore/locations/" target="_blank">LANGUAGE</a>
+    	</div>
+    	<div class="footer-sign">
+    		<span>&copy; 2017 INSTAGRAM</span>
+    	</div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<app-frame-app [url]='iframeSrcUrl'></app-frame-app>

@@ -1,0 +1,269 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+/* ----- Preloader ----- */
+#preloader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999999;
+	background: #003366 url('../img/bg-stars.png') repeat 0 0;
+	background-size: contain;
+	/* ----- Animation time in seconds ----- */
+	-webkit-animation: 100s linear 0s reverse none infinite stars;
+	-moz-animation: 100s linear 0s reverse none infinite stars;
+	-ms-animation: 100s linear 0s reverse none infinite stars;
+	-o-animation: 100s linear 0s reverse none infinite stars;
+	animation: 100s linear 0s reverse none infinite stars;
+}
+
+/* ----- Stars ----- */
+.animation {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+	background: #003366 url('../img/bg-stars.png') repeat 0 0;
+	background-size: contain;
+	/* ----- Animation time in seconds ----- */
+	-webkit-animation: 100s linear 0s reverse none infinite stars;
+	-moz-animation: 100s linear 0s reverse none infinite stars;
+	-ms-animation: 100s linear 0s reverse none infinite stars;
+	-o-animation: 100s linear 0s reverse none infinite stars;
+	animation: 100s linear 0s reverse none infinite stars;
+}
+
+.animation img {
+	position: absolute;
+	height: auto;
+}
+
+.flying-dog {
+	width: 85%;
+	top: 0;
+	left: 0;
+	margin-top: 7.5%;
+	/* ----- Animation time in seconds ----- */
+	-webkit-animation: 10s linear 0s normal none 1 flyingDog;
+	-moz-animation: 10s linear 0s normal none 1 flyingDog;
+	-ms-animation: 10s linear 0s normal none 1 flyingDog;
+	-o-animation: 10s linear 0s normal none 1 flyingDog;
+	animation: 10s linear 0s normal none 1 flyingDog;
+}
+
+.asteroids {
+	width: 3.5%;
+	bottom: 40%;
+	left: 15%;
+	/* ----- Animation time in seconds ----- */
+	-webkit-animation: 5s linear 0s normal none infinite rotateX;
+	-moz-animation: 5s linear 0s normal none infinite rotateX;
+	-ms-animation: 5s linear 0s normal none infinite rotateX;
+	-o-animation: 5s linear 0s normal none infinite rotateX;
+	animation: 5s linear 0s normal none infinite rotateX;
+}
+
+.superhero {
+	width: 4.5%;
+	top: 0;
+	right: 15%;
+	-webkit-transform: rotate(-180deg);
+	-moz-transform: rotate(-180deg);
+	-ms-transform: rotate(-180deg);
+	-o-transform: rotate(-180deg);
+	        transform: rotate(-180deg);
+}
+
+.blackhole {
+	width: 4%;
+	bottom: 10%;
+	left: 40%;
+	/* ----- Animation time in seconds ----- */
+	-webkit-animation: 5s linear 0s normal none infinite rotateY;
+	-moz-animation: 5s linear 0s normal none infinite rotateY;
+	-ms-animation: 5s linear 0s normal none infinite rotateY;
+	-o-animation: 5s linear 0s normal none infinite rotateY;
+	animation: 5s linear 0s normal none infinite rotateY;
+}
+
+.plane1 {
+	width: 4.5%;
+	top: 70%;
+	left: 0;
+}
+
+.plane2 {
+	width: 4.5%;
+	top: 100%;
+	left: 50%;
+}
+
+.plane3 {
+	width: 1.75%;
+	bottom: 0;
+	left: 30%;
+}
+
+.planet {
+	width: 2.5%;
+	bottom: 22%;
+	right: 30%;
+	/* ----- Animation time in seconds ----- */
+	-webkit-animation: 10s linear 0s normal none infinite rotateX;
+	-moz-animation: 10s linear 0s normal none infinite rotateX;
+	-ms-animation: 10s linear 0s normal none infinite rotateX;
+	-o-animation: 10s linear 0s normal none infinite rotateX;
+	animation: 10s linear 0s normal none infinite rotateX;
+}
+
+.astronaut {
+	width: 3%;
+	top: 50%;
+	right: 15%;
+	/* ----- Animation time in seconds ----- */
+	-webkit-animation: 5s linear 0s alternate none infinite rotateY;
+	-moz-animation: 5s linear 0s alternate none infinite rotateY;
+	-ms-animation: 5s linear 0s alternate none infinite rotateY;
+	-o-animation: 5s linear 0s alternate none infinite rotateY;
+	animation: 5s linear 0s alternate none infinite rotateY;
+}
+
+
+
+/* ----- Media queries ----- */ 
+
+/* ----- Tablet breakpoint ----- */ 
+@media all and (max-width: 768px) {
+	.animation {
+		background-size: 200%;
+	}
+	/* ----- Width of sprites in tablet ----- */
+	.flying-dog {
+		margin-top: 35%;
+		-webkit-transform: scale(2);
+		-moz-transform: scale(2);
+		-ms-transform: scale(2);
+		-o-transform: scale(2);
+		transform: scale(2);
+		left: -40%;
+	}
+
+	.asteroids {
+		width: 8.5%;
+		top: 50%;
+		left: 15%;
+	}
+
+	.superhero {
+		width: 9.5%;
+		top: 10%;
+		right: 0;
+	}
+
+	.blackhole {
+		width: 9%;
+		bottom: 10%;
+		left: 30%;
+	}
+
+	.plane1 {
+		width: 9.5%;
+		top: 65%;
+		left: 0;
+	}
+
+	.plane2 {
+		width: 9.5%;
+	}
+
+	.plane3 {
+		width: 5.75%;
+		bottom: 0;
+		left: 30%;
+	}
+
+	.planet {
+		width: 5%;
+		bottom: 20%;
+		right: 25%;
+	}
+
+	.astronaut {
+		width: 8%;
+		top: 50%;
+		right: 15%;
+	}
+}
+
+
+/* ----- Mobile breakpoint ----- */ 
+@media all and (max-width: 480px) {
+	.animation {
+		background-size: 250%;
+	}
+	/* ----- Width of sprites in mobile ----- */
+	.flying-dog {
+		-webkit-transform: scale(2);
+		-moz-transform: scale(2);
+		-ms-transform: scale(2);
+		-o-transform: scale(2);
+		transform: scale(2);
+		left: -40%;
+		top: 25%;
+		margin-top: 7%;
+	}
+
+	.asteroids {
+		width: 9%;
+	}
+
+	.superhero {
+		width: 10%;
+	}
+
+	.blackhole {
+		width: 10%;
+	}
+
+	.plane1 {
+		width: 10%;
+	}
+
+	.plane2 {
+		width: 10%;
+	}
+
+	.plane3 {
+		width: 7%;
+	}
+
+	.planet {
+		width: 8%;
+	}
+
+	.astronaut {
+		width: 8%;
+	}
+}
+
